@@ -1,0 +1,38 @@
+# SBOM outputs
+*.sbom.json
+*-sbom.json
+*-sbom-*.json
+*-bom.json
+*.spdx
+*.spdx.json
+*.cdx.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

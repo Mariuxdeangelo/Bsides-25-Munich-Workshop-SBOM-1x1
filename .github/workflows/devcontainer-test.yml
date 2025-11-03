@@ -1,0 +1,30 @@
+name: Test Dev Container
+
+on:
+  pull_request:
+    paths:
+      - '.devcontainer/**'
+  push:
+    branches:
+      - main
+    paths:
+      - '.devcontainer/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build and test devcontainer
+        uses: devcontainers/ci@v0.3
+        with:
+          runCmd: |
+            echo "Testing tool installations..."
+            syft version
+            grype version
+            cdxgen --version
+            echo "All tools installed successfully!"
